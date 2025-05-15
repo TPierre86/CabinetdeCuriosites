@@ -4,27 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Cabinet de Curiosités</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head> 
 
 <body>
-    <header>
-        <h1>Bienvenue au Cabinet de Curiosités</h1>
-        <nav>
-            <ul>
-                <li><a href="#exposition">Exposition actuelle</a></li>
-                <li><a href="#galerie">Galerie d'objets</a></li>
-                <li><a href="#apropos">À propos</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="exposition">
-        <h2>Objet du jour : La plume à mémoire inversée</h2>
-        <!-- Objet temporaire, à voir si je garde celui la-->
-         <h3> Description : </h3> 
-         <p>Cette plume, d’apparence banale mais légèrement trop lourde pour sa taille, ne fonctionne qu’avec un type de papier inconnu. Lorsqu’on l’utilise, l’écriture est parfaitement lisible, parfois même d’une clarté troublante — mais l’auteur ne se souvient jamais avoir tenu la plume, ni de ce qu’il y a écrit. Les effets sont instantanés et irréversibles : la mémoire de l’acte d’écriture est supprimée. Les témoins notent souvent un comportement étrange chez l’utilisateur après usage : désorientation brève, regard fixe, respiration ralentie.</p>
-    </section>
-    <footer>
+    <div class="wrapper">
+        <header>
+            <div class="topbar">
+                <div class="topbar-gauche">
+                    <input type="text" placeholder="Recherche..." class="search-input" />
+                </div>
+                <div class="topbar-centre">
+                    <h1 class="logo">Cabinet de Curiosités</h1>
+                </div>
+                <div class="topbar-droite">
+                    <span class="icon-billetterie" title="Billetterie">🎟️</span>
+                </div>
+            </div>   
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#exposition">Exposition actuelle</a></li>
+                    <li><a href="#galerie">Galerie d'objets</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="exposition">
+            <div class="fond-noir">
+                <div class="exposition-contenue">
+                    <h2 class="titre">Objet du jour : La plume à mémoire inversée</h2>
+                    <!-- Objet temporaire, à voir si je garde celui la-->
+                    <h3 class="titre"> Description : </h3> 
+                    <p class="Description">Cette plume, d’apparence banale mais légèrement trop lourde pour sa taille, ne fonctionne qu’avec un type de papier inconnu. Lorsqu’on l’utilise, l’écriture est parfaitement lisible, parfois même d’une clarté troublante — mais l’auteur ne se souvient jamais avoir tenu la plume, ni de ce qu’il y a écrit. Les effets sont instantanés et irréversibles : la mémoire de l’acte d’écriture est supprimée. Les témoins notent souvent un comportement étrange chez l’utilisateur après usage : désorientation brève, regard fixe, respiration ralentie.</p>
+                </div>
+            </div>    
+        </section>
+    <footer class="site-footer">
          <p>&copy;2025 Le cabinet de Curiosités</p>
     </footer>
+    </div>
 </body>
