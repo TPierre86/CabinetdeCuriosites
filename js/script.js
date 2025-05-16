@@ -1,17 +1,54 @@
+/* =====================================
+Page d'acceuil Plume à mémoire inversée
+======================================*/
+
 document.addEventListener("DOMContentLoaded", () => {
+    const section = document.getElementById("exposition");
+    const fondNoir = document.querySelector(".fond-noir");
     const paragraphe = document.querySelector(".exposition-contenue p");
 
-    if (!paragraphe) return;
-    const mots = paragraphe.innerText.trim().split(" ");
-    paragraphe.innerHTML = mots.map(mot => `<span class="fade-word">${mot}</span>`).join(" ");
-    const spans = paragraphe.querySelectorAll(".fade-word");
+    if (!section || !fondNoir || !paragraphe) return;
 
+    const texteInitial = paragraphe.innerText.trim();
+    let effacementTimeouts = [];
+    let lancementEffacementTimeout;
 
-    setTimeout(() => {
+    function resetTexte() {
+        paragraphe.innerHTML = texteInitial
+            .split(" ")
+            .map(mot => `<span class="fade-word">${mot}</span>`)
+            .join(" ")
+    }
+
+    function lancerEffacement() {
+        const spans = paragraphe.querySelectorAll(".fade-word");
+
         spans.forEach((span, index) => {
-            setTimeout(() => {
+            const timeoutId = setTimeout(() => {
                 span.classList.add("invisible");
-            }, index * 200);
+            }, index * 600);
+            effacementTimeouts.push(timeoutId);
         });
-    }, 5000);
+    }
+
+    function retirerEffacement() {
+        clearTimeout(lancementEffacementTimeout)
+        effacementTimeouts.forEach(timeout => clearTimeout (timeout));
+        effacementTimeouts = [];
+    }
+
+    section.addEventListener("mouseenter", () => {
+        fondNoir.classList.add("active");
+        resetTexte();
+        retirerEffacement();
+    lancementEffacementTimeout = setTimeout(() => {
+        lancerEffacement();
+    }, 1000);    
+    })
+
+    section.addEventListener("mouseleave", () => {
+        fondNoir.classList.remove("active");
+        retirerEffacement();
+        resetTexte();
+    })
 });
