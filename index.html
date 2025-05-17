@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Cabinet de Curiosités</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head> 
 
 <body>
@@ -19,17 +19,71 @@
                     <h1 class="logo">Cabinet de Curiosités</h1>
                 </div>
                 <div class="topbar-droite">
-                    <span class="icon-billetterie" title="Billetterie">🎟️</span>
+                    <span class="icon-billetterie" title="Billetterie">Billeterie 🎟️</span>
                 </div>
             </div>   
+
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#exposition">Exposition actuelle</a></li>
-                    <li><a href="#galerie">Galerie d'objets</a></li>
-                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#" class="dropdown-actif" data-target="exposition-menu">Expositions actuelle</a></li>
+                    <li><a href="#" class="dropdown-actif" data-target="galerie-menu">Galerie d'objets</a></li>
+                    <li><a href="#" class="dropdown-actif" data-target="apropos-menu">À propos</a></li>
                 </ul>
-            </nav>
+            </nav> 
         </header>
+
+        <div class="contenue-dropdown" id="exposition-menu">
+            <ul class="dropdown">
+                <li><a href="#La carte des zones non-cartographiées">La carte des zones non-cartographiées</a></li>
+                <li><a href="#Le compteur de regards reçus">Le compteur de regards reçus</a></li>
+                <li><a href="#Le coffre à combinaison mouvante">Le coffre à combinaison mouvante</a></li>
+            </ul>
+        </div>
+
+        <div class="contenue-dropdown" id="galerie-menu">
+            <ul class="dropdown">
+                <li><a href="#objetsancien">Galerie d'objets ancien</a></li>
+                <li><a href="#objetsmoderne">Galerie d'objets contemporains</a></li>
+            </ul>
+        </div>
+
+         <div class="contenue-dropdown" id="apropos-menu">
+            <ul class="dropdown">
+                <li><a href="#histoire">Histoire du musée</a></li>
+                <li><a href="#Equipe">Présentation de l'équipe</a></li>
+                <li><a href="#Contact">Nous contacter</a></li>
+            </ul>
+        </div>
+
+            <!--<nav class="main-nav">
+                <ul>
+                    <li class="a-dropdown">
+                        <a href="#exposition" class="clique-dropdown">Expositions actuelle</a>
+                        <ul class="dropdown">
+                            <li><a href="#La carte des zones non-cartographiées">La carte des zones non-cartographiées</a></li>
+                            <li><a href="#Le compteur de regards reçus">Le compteur de regards reçus</a></li>
+                            <li><a href="#Le coffre à combinaison mouvante">Le coffre à combinaison mouvante</a></li>
+                        </ul>
+                    </li>
+                    <li class="a-dropdown">
+                        <a href="#galerie" class="clique-dropdown">Galerie d'objets</a>
+                        <ul class="dropdown">
+                            <li><a href="#objetsancien">Galerie d'objets ancien</a></li>
+                            <li><a href="#objetsmoderne">Galerie d'objets contemporains</a></li>
+                        </ul>
+                    </li>
+                    <li class="a-dropdown">
+                        <a href="#apropos" class="clique-dropdown">À propos</a>
+                        <ul class="dropdown">
+                            <li><a href="#histoire">Histoire du musée</a></li>
+                            <li><a href="#Equipe">Présentation de l'équipe</a></li>
+                            <li><a href="#Contact">Nous contacter</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav> -->
+
+        
         <section id="exposition">
             <div class="fond-noir">
                 <div class="exposition-contenue">
@@ -37,11 +91,16 @@
                     <!-- Objet temporaire, à voir si je garde celui la-->
                     <h3 class="titre"> Description : </h3> 
                     <p class="Description">Cette plume, d’apparence banale mais légèrement trop lourde pour sa taille, ne fonctionne qu’avec un type de papier inconnu. Lorsqu’on l’utilise, l’écriture est parfaitement lisible, parfois même d’une clarté troublante — mais l’auteur ne se souvient jamais avoir tenu la plume, ni de ce qu’il y a écrit. Les effets sont instantanés et irréversibles : la mémoire de l’acte d’écriture est supprimée. Les témoins notent souvent un comportement étrange chez l’utilisateur après usage : désorientation brève, regard fixe, respiration ralentie.</p>
+                    <h3 class="titre">Origine :</h3>
+                    <p class="Description">Localisation initiale : un ancien centre de documentation fermé depuis 1978, dans les sous-sols d’un bâtiment administratif à Varsovie. Elle était scellée dans une boîte en plastique dur, avec une étiquette en russe effacée, simplement marquée : 
+                        <br><i>“НЕ ПРИКАСАТЬСЯ — РАБОТАЕТ”</i></p>(“Ne pas toucher – Fonctionne”)</p>
+                    <p class="Description">Aucune autre documentation n’a été retrouvée, si ce n’est une feuille griffonnée à la main à côté de la boîte, contenant uniquement la phrase suivante :
+                        <br><i>“Je ne me souviens pas pourquoi je suis venu ici.”</i></p></p>
                 </div>
             </div>    
         </section>
     <footer class="site-footer">
-         <p>&copy;2025 Le cabinet de Curiosités</p>
+         <p>&copy;2025 Le cabinet de Curiosités - Projet réalisé par Thibault Pierre</p>
     </footer>
     </div>
 </body>

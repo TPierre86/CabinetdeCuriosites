@@ -52,29 +52,40 @@ body {
     margin: 0;
     font-size: 1.8rem;
     letter-spacing: 1px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
 }
 
 .search-input {
   padding: 0.5rem;
   width: 100%;
   max-width: 200px;
-  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  border: 2px solid #bfae94;
   border-radius: 4px;
   font-size: 0.95rem;
 }
 .topbar-droite {
+  flex: 1;
+  display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-left: 0;
+  background-color: #1f1f1f;
 }
 
 .icon-billetterie {
   font-size: 1.5rem;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.8s ease;
+  border: 1px solid #bfae94;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline;
+  color: #bfae94;
 }
 
 .icon-billetterie:hover {
-  transform: scale(1.2);
+  transform: scale(105%);
 }
 
 /* ========================
@@ -96,7 +107,6 @@ body {
     flex: 0 1 auto;
     background-color: #f3f0e9;
     padding: 0.5rem 1rem;
-    /*border-radius: 8px;*/
     transition: background-color 0.3s ease;
 }
 
@@ -137,6 +147,24 @@ body {
   color: #000;
 }
 
+.contenue-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background-color: #f3f0e9;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  z-index: 1000;
+  border-top: 1px solid #bfae94;
+}
+
+.contenue-dropdown.actif {
+  display: block;
+}
+
 /* ===============================
    Layout général (wrapper, header, section)
 =============================== */
@@ -166,7 +194,7 @@ body {
 .fond-noir {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 2rem;
-  width: 40vw;
+  width: 30vw;
   height: 100vh;
   display: flex;
   flex-direction: column;

@@ -2,6 +2,7 @@
 Page d'acceuil Plume à mémoire inversée
 ======================================*/
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const section = document.getElementById("exposition");
     const fondNoir = document.querySelector(".fond-noir");
@@ -52,3 +53,47 @@ document.addEventListener("DOMContentLoaded", () => {
         resetTexte();
     })
 });
+
+/* =====================================
+Navigation principale - Menus déroulants
+======================================*/
+
+document.addEventListener("DOMContentLoaded", () =>{
+    const liensDropdown = document.querySelectorAll(".dropdown-actif");
+    let menuOuvert = null;
+
+    liensDropdown.forEach(lien =>{
+        lien.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const targetId = lien.getAttribute("data-target");
+            const menu = document.getElementById(targetId);
+
+            if (menuOuvert === menu) {
+                menu.classList.remove("visible");
+                menuOuvert = null;
+                return;
+            }
+
+            if (menuOuvert) {
+                menuOuvert.classList.remove("visible");
+            }
+
+            menu.classList.add("visible");
+            menuOuvert = menu;
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+        if (
+            !e.target.closest(".main-nav") &&
+            !e.target.closest(".contenue-dropdown")
+        ) {
+            if (menuOuvert) {
+                menuOuvert.classList.remove("visible");
+                menuOuvert = null;
+            }
+        }
+    });
+});
+
